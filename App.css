@@ -1,0 +1,273 @@
+*{
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+
+.body{
+    font-size: 16px;
+}
+
+
+.textLightGray{color: rgba(2, 6, 12, 0.6);}
+.textGreen{color: #116649;}
+
+.font14px{font-size: 0.875rem;}
+
+.pos-rel{position: relative;}
+.pos-abs{position: absolute;}
+
+.header{
+    padding: 0vw 5vw;
+    background-color: #ffffff;
+    box-shadow: 0 15px 40px -20px rgba(40,44,63,.15);
+}
+
+.navigation-links a,logo-link {
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    transition: 0.2s;
+}
+
+.navigation-links a:hover {
+    color: orange;
+}
+
+.body-container{
+    width: 80vw;
+    margin: auto;
+    margin-top: 4rem;
+}
+
+.flex{
+    display: flex;
+}
+
+.flex-column{flex-direction: column;}
+
+.space-between{
+    justify-content: space-between;
+}
+
+.space-evenly{
+    justify-content: space-evenly;
+}
+
+.wrap{
+    flex-wrap: wrap;
+    /* justify-content: space-evenly; */
+}
+
+.align-center{
+    align-items: center;
+}
+
+.logo-container{
+    width:6rem;
+    /* height: 10px; */
+}
+
+.logo-container > img{
+    width: 100%;
+}
+
+.navigation-links{
+    margin: 0rem 1rem;
+}
+
+.navigation-links > ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navigation-links > ul > li{
+    padding: 1rem;
+}
+
+.search{
+    margin: 1rem 1rem;
+}
+
+.search > input,button{
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    margin-right: 0.15rem;
+}
+
+.res-card{
+    margin: auto;
+    width: 15.5rem;
+    height: 20rem;
+    margin: 1rem;
+    transition: 0.1s;
+    background-color: #f0f0f0;
+    border-radius: 0.75rem;
+}
+
+.shimmer-card{
+    margin: auto;
+    width: 15.5rem;
+    height: 20rem;
+    margin: 1rem;
+    transition: 0.1s;
+    background-color: #f0f0f0;
+    border-radius: 0.75rem;
+}
+
+.res-card:hover{
+    /* border: 1px solid black; */
+    cursor: pointer;
+    transform: scale(0.95);
+}
+
+.res-card > img{
+    width: 100%;
+    height: 60%;
+    border-radius: 0.75rem;
+}
+
+.restaurant-details {
+    padding: 0.5rem;
+    font-size: 0.75rem;
+    font-style: italic;
+}
+
+.login-btn{
+    padding: 1rem;
+    width: 5rem;
+    cursor: pointer;
+    margin: 0rem 1rem;
+}
+
+.linkStyle{
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+}
+
+.resMenu{
+    width: 45%;
+    margin: auto;
+}
+
+.resMenu > h2{
+    margin: 2rem 1rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: rgba(2, 6, 12, 0.92);
+}
+
+.resInfoContainer{
+    padding: 0rem 1rem 1rem;
+    border-radius: 2.5rem;
+    /* background-color: rgb(179, 161, 161); */
+    background-image: linear-gradient(rgb(255, 255, 255) -6.71%, rgb(235, 235, 242) 56.19%, rgb(223, 223, 231) 106.56%);
+}
+
+.resInfo{
+    border-radius: 2rem;
+    padding: 1rem;
+    background-color: white;
+}
+
+.margin-1{margin: 1rem;}
+.margin-2{margin: 2rem;}
+.margin-lr-half{margin: 0rem 0.5rem;}
+.margin-lr1{margin: 0rem 1rem;}
+.margin-tb-half{margin: 0.5rem 0rem;}
+.margin-tb1{margin: 1rem 0rem;}
+.margin-top-half{margin-top:0.5rem}
+.margin-top1{margin-top:1rem}
+.margin-top2{margin-top:2rem}
+
+.padding-1{padding: 0.5rem 0.5rem 0rem;}
+
+.dot{
+    padding: 0.25rem;
+    border-radius: 1rem;
+    width: 0.25rem;
+    background-color: #c4c4c4;
+}
+
+.online{
+    display: inline-block;
+    padding: 0.5rem;
+    border-radius: 2rem;
+    width: 0.25rem;
+    background-color: #52c152;
+}
+
+.offline{
+    padding: 0.5rem;
+    display: inline-block;
+    border-radius: 1rem;
+    width: 0.25rem;
+    background-color: red;
+}
+
+.line{
+    height: 1.5rem;
+    background-color: #c4c4c4;
+    width: 0.2rem;
+    margin: 0rem 0.15rem;
+}
+
+.mapSymbol{
+    padding: 0.5rem 0rem;
+}
+
+.heading{
+    text-align: center;
+    letter-spacing: 0.15rem;
+    margin: 1.5rem;
+}
+
+.menuSearchButton{
+    width: 100%;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: rgb(240, 240, 245);
+    cursor: pointer;
+}
+
+.menuCategoryBtn{
+    width: 100%;
+    border: none;
+    padding: 1rem;
+    background-color: transparent;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.seperator{
+    width: 100%;
+    height: 0.5rem;
+    background-color: #c4c4c4;
+    /* padding: 1rem; */
+}
+
+.categoryItems{
+    display: block;
+    width: 100%;
+}
+
+.foodItem{
+    width: 100%;
+    padding: 1rem;
+}
+
+.mealImage{
+    width: 30%;
+    height: 10rem;
+    border-radius: 1.5rem;
+    overflow: hidden;
+}
+
+.moreButton{
+    cursor: pointer;
+    background-color: transparent;
+    padding: 0%;
+    border: none;
+}
