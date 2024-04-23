@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -29,11 +29,7 @@ const appRouter = createBrowserRouter([
             },
             {
                 path: '/about',
-                element:(
-                    <Suspense fallback={<h1 className="margin-2">Loading...</h1>} >
-                        <About />
-                    </Suspense>
-                ) 
+                element: <About />
             },
             {
                 path: '/restaurantMenu/:id',
@@ -45,4 +41,3 @@ const appRouter = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<RouterProvider router={appRouter}/>);
-

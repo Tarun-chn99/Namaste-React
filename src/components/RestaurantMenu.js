@@ -12,8 +12,8 @@ const RestaurantMenu = () => {
     if(menu === null)
     return <Shimmer/>;
 
-    const {name,avgRating,totalRatingsString,costForTwoMessage,areaName,sla,expectationNotifiers} = menu?.data?.cards[2]?.card?.card?.info;
-    const category = menu?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
+    const {name,avgRating,totalRatingsString,costForTwoMessage,areaName,sla,expectationNotifiers} = menu?.data?.cards?.[2].card?.card?.info;
+    const category = menu?.data?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
 
     return (
         <div className="resMenu">
@@ -41,7 +41,7 @@ const RestaurantMenu = () => {
                     <hr />
                     <div className="flex align-center padding-1 font14px">
                         <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_40,h_40/v1648635511/Delivery_fee_new_cjxumu" alt="" width="20px"/>
-                        <p className="margin-lr-half textLightGray">{expectationNotifiers[0].text}</p>
+                        <p className="margin-lr-half textLightGray">{expectationNotifiers?.[0].text}</p>
                     </div>
                 </div>
             </div>
