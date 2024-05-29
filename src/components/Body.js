@@ -8,11 +8,10 @@ import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
     
-    
     const resList = useRef();
     const [restaurantList, setRestaurantList] = useState([]);
     const onlineStatus = useOnlineStatus();
-    resList.current = useRestaurantList(setList);                                                           
+    resList.current = useRestaurantList(setList);     
    
     function setList(props){
         setRestaurantList(props)
@@ -28,7 +27,9 @@ const Body = () => {
                 {restaurantList.length !== 0 ?  
                 <div className="res-container flex wrap space-evenly">
                     {restaurantList.map?.((res) => {
-                        return <Link className="linkStyle" key={res.info.id} to={`/restaurantMenu/${res.info.id}`} ><RestaurantCard resList={res} /></Link>
+                        return  <Link className="linkStyle" key={res.info.id} to={`/restaurantMenu/${res.info.id}`} >
+                                   <RestaurantCard resList={res}/>
+                                </Link>
                     })}
                 </div>
                 :
@@ -38,3 +39,7 @@ const Body = () => {
 }
 
 export default Body;
+
+
+
+

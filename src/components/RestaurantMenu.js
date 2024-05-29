@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import { useState } from "react";
 import Shimmer from "./Shimmer";
 import MenuCategory from "./MenuCategory";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
@@ -8,12 +9,13 @@ const RestaurantMenu = () => {
     
     const {id} = useParams();
     const menu = useRestaurantMenu(id);     //custom hook to get restaurant menu
+    const [showCategory,setshowCategory] = useState(0);
 
     if(menu === null)
     return <Shimmer/>;
 
     const {name,avgRating,totalRatingsString,costForTwoMessage,areaName,sla,expectationNotifiers} = menu?.data?.cards?.[2].card?.card?.info;
-    const category = menu?.data?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
+    const category = menu?.data?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(element => element?.card?.card["@type"]?.includes("ItemCategory"));
 
     return (
         <div className="resMenu">
@@ -47,6 +49,8 @@ const RestaurantMenu = () => {
             </div>
 
             <h3 className="heading margin-top2">MENU</h3>
+
+            //Filter buttons
             <div className="search flex space-evenly">
                 <button className="menuSearchButton textLightGray"><b>Search for dishes</b></button>
             </div>
@@ -55,17 +59,26 @@ const RestaurantMenu = () => {
                 <button className="margin-lr-half">Bestseller</button>
             </div>
             <hr className="margin-1 margin-top2" />
+
+            //Menu category
             {
-                category.map?.((element) => {
-                    if(element?.card?.card["@type"]?.includes("ItemCategory")){
-                        return <MenuCategory category={element?.card?.card} key={element?.card?.card?.title}/>
-                    }
-                    else
-                    return;
-                })
+                category.map?.((element,index) => 
+                    //controlled component
+                            <MenuCategory 
+                                showCategory={index === showCategory}
+                                category={element?.card?.card} 
+                                key={element?.card?.card?.title} 
+                                setshowCategory={()=> showCategory === index ? setshowCategory(null) : setshowCategory(index)}
+                            />
+                )
             }
+            
         </div>
     )
 }
 
 export default RestaurantMenu;
+
+
+
+

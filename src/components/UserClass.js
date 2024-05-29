@@ -1,8 +1,8 @@
 import { Component } from 'react'
-
 class UserClass extends Component{
     
     constructor(props){
+        console.log("Inside constructor")
         super(props);
         this.state = {
             Contact: 9523563253,

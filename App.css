@@ -2,6 +2,7 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities'; */
 
+
 *{
     margin: 0%;
     box-sizing: border-box;
@@ -233,6 +234,7 @@
     padding: 1rem;
     border-radius: 1rem;
     background-color: rgb(240, 240, 245);
+
     cursor: pointer;
 }
 
@@ -275,5 +277,4 @@
     padding: 0%;
     border: none;
 }
-
 

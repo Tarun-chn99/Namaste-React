@@ -1,20 +1,20 @@
-import React, { lazy, Suspense, useEffect, useState } from "react";
+import React, { lazy, Suspense} from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import Error from "./components/Error";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RestaurantMenu from "./components/RestaurantMenu";
-import About from "./components/About"
 
-// const About = lazy(()=>{ import("./components/About")});
+
+const About = lazy(() => import("./components/About"));
 
 const App = () => {
 
-    return <>
-            <Header />
-            <Outlet /> 
-           </>
+    return  <div className="app">
+                <Header />
+                <Outlet /> 
+            </div>
 }
 
 const appRouter = createBrowserRouter([
@@ -29,7 +29,9 @@ const appRouter = createBrowserRouter([
             },
             {
                 path: '/about',
-                element: <About />
+                element: <Suspense fallback={<h1>Loading...</h1>}>
+                            <About />
+                         </Suspense>
             },
             {
                 path: '/restaurantMenu/:id',

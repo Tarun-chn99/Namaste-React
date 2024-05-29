@@ -27,13 +27,19 @@ const Filter = ({resList,setResList}) => {
     }
 
     return (
-        <div className="search">
-            <input type='text' name="Search items..." value={text} onChange={onChange}/>
-            <button onClick={handleSearch}>Search</button>
-            <button onClick={handleTopRated}>Top Rated</button>
-            <button onClick={handleDefault}>Default</button>
-        </div>
+            <div className="search">
+                <input type='text' name="Search items..." value={text} onChange={onChange} className="border m-4"/>
+                <button onClick={handleSearch}>Search</button>
+                <button onClick={handleTopRated}>Top Rated</button>
+                <button onClick={handleDefault}>Default</button>
+            </div>
     )
 }
 
 export default Filter;
+
+
+
+
+
+
