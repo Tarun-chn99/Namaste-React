@@ -23,6 +23,7 @@ const Body = () => {
     return( 
 
             <div className="body-container">
+                <h1>Hey</h1>
                 <Filter resList={resList.current} setResList={setList} />
                 {restaurantList.length !== 0 ?  
                 <div className="res-container flex wrap space-evenly">

@@ -6,7 +6,7 @@ const ItemCard = (props) => {
 
   const {name,itemAttribute,price,defaultPrice,ratings,description,id,imageId} = props.itemInfo;  
   const [moreBtn,setMoreBtn] = useState(false);
-
+  
   const handleMoreBtn = () => {
     (moreBtn === true) ?  setMoreBtn('false') : setMoreBtn('true');
     document.getElementById(id).style.display = "none";

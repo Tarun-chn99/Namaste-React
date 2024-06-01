@@ -5,16 +5,22 @@ import Body from "./components/Body";
 import Error from "./components/Error";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RestaurantMenu from "./components/RestaurantMenu";
+import {Provider} from 'react-redux';
+import appStore from "./AppReduxStore/appStore";
 
 
 const About = lazy(() => import("./components/About"));
 
 const App = () => {
 
-    return  <div className="app">
+    return  (
+        <Provider store={appStore}>
+            <div className="app">
                 <Header />
                 <Outlet /> 
             </div>
+        </Provider>
+    );
 }
 
 const appRouter = createBrowserRouter([

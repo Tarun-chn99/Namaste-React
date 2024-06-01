@@ -2,6 +2,10 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities'; */
 
+h1{
+    background-color: transparent;
+    border: 1px solid black;
+}
 
 *{
     margin: 0%;

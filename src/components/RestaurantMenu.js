@@ -50,7 +50,7 @@ const RestaurantMenu = () => {
 
             <h3 className="heading margin-top2">MENU</h3>
 
-            //Filter buttons
+            {/* Filter buttons */}
             <div className="search flex space-evenly">
                 <button className="menuSearchButton textLightGray"><b>Search for dishes</b></button>
             </div>
@@ -60,7 +60,7 @@ const RestaurantMenu = () => {
             </div>
             <hr className="margin-1 margin-top2" />
 
-            //Menu category
+            {/* Menu category */}
             {
                 category.map?.((element,index) => 
                     //controlled component
