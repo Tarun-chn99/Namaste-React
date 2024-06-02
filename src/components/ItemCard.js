@@ -1,17 +1,23 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addItem } from "../AppReduxStore/cartSlice";
 import {RES_IMG_URL} from "../utils/constants"
 
 
-const ItemCard = (props) => {
+const ItemCard = ({itemInfo}) => {
 
-  const {name,itemAttribute,price,defaultPrice,ratings,description,id,imageId} = props.itemInfo;  
+  const dispatch = useDispatch(); 
+  const {name,itemAttribute,price,defaultPrice,ratings,description,id,imageId} = itemInfo;  
   const [moreBtn,setMoreBtn] = useState(false);
-  
+
   const handleMoreBtn = () => {
     (moreBtn === true) ?  setMoreBtn('false') : setMoreBtn('true');
     document.getElementById(id).style.display = "none";
   }
 
+  const handleAddItems = () => {
+    dispatch(addItem(itemInfo));
+  }
 
   return (
     <>
@@ -35,7 +41,7 @@ const ItemCard = (props) => {
 
           <p><i>
             
-            {(Object.keys(props.itemInfo).find((val)=>{return val==="description"}) === "description") ? 
+            {(Object.keys(itemInfo).find((val)=>{return val==="description"}) === "description") ? 
               ((moreBtn === false) ? description.slice(0,80) : description )  : ""}
 
             <button id={id} className="moreButton" onClick={handleMoreBtn}><b>...more</b></button>
@@ -43,8 +49,11 @@ const ItemCard = (props) => {
 
         </div>
         
-        <div className="mealImage">
+        <div className="mealImage pos-rel">
           <img src={RES_IMG_URL+imageId} alt="" width='100%' height='100%' />
+          <p className="addToCartButtonContainer">
+            <button className="addToCartButtn" onClick={handleAddItems}>Add</button>
+          </p>
         </div>
 
     </div>

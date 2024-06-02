@@ -31,7 +31,7 @@ const Header = () => {
                     <li><Link to="/about">About</Link></li>
                     <li><Link>Help</Link></li>
                     <li><Link>Sign In</Link></li>
-                    <li><Link><b>Cart : {cartItems.length}</b></Link></li>
+                    <li><Link to="/cart"><b>Cart : {cartItems.length}</b></Link></li>
                     <button className="login-btn" onClick={login}>{btnName}</button>  
                     <li><b>{userName}</b></li>                  
                 </ul>

@@ -2,11 +2,6 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities'; */
 
-h1{
-    background-color: transparent;
-    border: 1px solid black;
-}
-
 *{
     margin: 0%;
     box-sizing: border-box;
@@ -25,6 +20,12 @@ h1{
 
 .pos-rel{position: relative;}
 .pos-abs{position: absolute;}
+
+.p-1{padding: 0.25rem;}
+.p-2{padding: 0.5rem;}
+.p-3{padding: 0.75rem;}
+.p-4{padding: 1rem;}
+
 
 .header{
     padding: 0vw 5vw;
@@ -281,4 +282,39 @@ h1{
     padding: 0%;
     border: none;
 }
+.addToCartButtonContainer{
+    position:absolute;
+    bottom:10%;
+    left:0%;
+    right: 0%;
+    width: 100%;
+    text-align: center;
+}
 
+.addToCartButtn{
+    padding: 1rem;
+    border: none;
+    font-weight: 400;
+    cursor: pointer;
+    background-color: rgb(53, 51, 51);
+    color: #f0f0f0;
+}
+
+.cart{
+    width: 55%;
+    margin: 2rem auto;
+    padding: 2rem;
+    border: none;
+}
+
+.cartButton{
+    display: block;
+    padding: 1rem;
+    border: none;
+    border-radius: 1rem;
+    font-weight: 800;
+    cursor: pointer;
+    background-color: #52c152;
+    color: #000000;
+    margin: 1rem auto;
+}
