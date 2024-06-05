@@ -9,6 +9,8 @@ const useRestaurantList = (setList) => {
         fetchList();
     },[]);
 
+    console.log("Inside useRestaurant list");
+
     const fetchList = async () => {
 
         try{
@@ -30,9 +32,10 @@ const useRestaurantList = (setList) => {
                     setResList(resListData);
                     setList(resListData);
                 
-                } else {
-                    console.error("Error fetching data");
-                  }
+                }
+                //  else {
+                //     console.error("Error fetching data");
+                //   }
 
             }
 
