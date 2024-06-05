@@ -1,10 +1,10 @@
 import { RES_IMG_URL } from "../utils/constants";
 
 export const RestaurantCard = (props) => {
-    
+
     const {name,cloudinaryImageId,areaName,avgRating,sla} = props.resList?.info;
     return (
-        <div className="res-card">
+        <div className="res-card" data-testid="resCard">
             <img src={`${RES_IMG_URL}/${cloudinaryImageId}`} alt=""/>
             <div className="restaurant-details">
                 <h3>{name}</h3>

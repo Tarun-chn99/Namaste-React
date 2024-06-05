@@ -15,9 +15,6 @@ const Filter = ({resList,setResList}) => {
         setResList(resList);
     };
 
-    const onChange = (e) => {
-        setText(e.target.value);
-    }
     
     const handleSearch = () => {
         const arr = resList?.filter((val) => {
@@ -25,10 +22,15 @@ const Filter = ({resList,setResList}) => {
         });
         setResList(arr);
     }
+    
+    const onChange = (e) => {
+        setText(e.target.value);
+        handleSearch();
+    }
 
     return (
             <div className="search">
-                <input type='text' name="Search items..." value={text} onChange={onChange} className="border m-4"/>
+                <input type='text' data-testid="input" name="Search items..." value={text} onChange={onChange} className="border m-4"/>
                 <button onClick={handleSearch}>Search</button>
                 <button onClick={handleTopRated}>Top Rated</button>
                 <button onClick={handleDefault}>Default</button>

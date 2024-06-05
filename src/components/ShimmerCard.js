@@ -1,5 +1,5 @@
 const ShimmertCard = () => {
-    return <div className="shimmer-card">
+    return <div className="shimmer-card" data-testid="shimmer">
            </div>
 }
 
